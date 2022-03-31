@@ -1,12 +1,9 @@
 ﻿function createList(_jsonText) {
 	let target = document.getElementById("panelList");
-	let div = document.createElement("div");
-	div.classList.add("frame");
-	target.appendChild(div);
 	_jsonText.forEach(data => {
-		if (data.state == "表示") createFrame(div, data.name, data.url);
+		if (data.state == "表示") createFrame(target, data.name, data.url);
 	});
-	// if (div.children.length <= 0) createPanel(div, "滑走可能なゲレンデはありません。", "");
+	if (div.children.length <= 0) createFrame(target, "滑走可能なゲレンデはありません。", null);
 }
 
 function createFrame(_parent, _name, _url) {
@@ -15,7 +12,9 @@ function createFrame(_parent, _name, _url) {
 	_parent.appendChild(div);
 
 	createName(div, _name);
-	createIframeBlock(div, _url);
+	if (_url) {
+		createIframeBlock(div, _url);
+	}
 }
 
 function createName(_parent, _name) {
