@@ -1,7 +1,8 @@
 ﻿function createList(_jsonText) {
 	let target = document.getElementById("panelList");
 	_jsonText.forEach(data => {
-		if (data.state == "表示") createFrame(target, data.name, data.url);
+		var date = new Date();
+		if (new Date(data.open).getTime() < date.getTime() && date.getTime() < new Date(data.close).getTime()) createFrame(target, data.name, data.url);
 	});
 	if (div.children.length <= 0) createFrame(target, "滑走可能なゲレンデはありません。", null);
 }
