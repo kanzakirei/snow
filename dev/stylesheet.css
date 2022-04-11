@@ -1,11 +1,14 @@
 * {
-  width: 980px;
   margin: 0px;
   padding: 0px;
 }
 
 html {
   -webkit-text-size-adjust: 100%;
+}
+
+body {
+  width: 980px;
 }
 
 #header {
