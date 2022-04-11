@@ -1,48 +1,25 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>スノボ情報</title>
-    <link type="text/css" rel="stylesheet" href="stylesheet.css">
-    <!--meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"-->
-  </head><body>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>スノボ情報</title>
+  <link type="text/css" rel="stylesheet" href="stylesheet.css">
+  <script type="text/javascript" src="javaScript/jsonLoader.js"></script>
+  <script type="text/javascript" src="javaScript/panelCreator.js"></script>
+  <script>loadJson("json/gelaendeList.json", createList);</script>
+</head>
+
+<body>
   <h1 id="title"></h1>
   <div class="content">
-    <div class="frame">
-      <p>ハチ高原</p>
-      <div class="iframe_block">
-        <iframe src="https://tenkura.n-kishou.co.jp/tk/kanko/kad.html?code=28010001&type=ski&ba=kn" frameborder="0" scrolling="no"></iframe>
-      </div>
-    </div>
-    <div class="frame">
-      <p>ハチ北高原</p>
-      <div class="iframe_block">
-        <iframe src="https://tenkura.n-kishou.co.jp/tk/kanko/kad.html?code=28010005&type=ski&ba=kn" frameborder="0" scrolling="no"></iframe>
-      </div>
-    </div>
-    <div class="frame">
-      <p>グランスノー奥伊吹</p>
-      <div class="iframe_block">
-        <iframe src="https://tenkura.n-kishou.co.jp/tk/kanko/kad.html?code=25010007&type=ski&ba=kn" frameborder="0" scrolling="no"></iframe>
-      </div>
-    </div>
-    <div class="frame">
-      <p>めいほうスキー場</p>
-      <div class="iframe_block">
-        <iframe src="https://tenkura.n-kishou.co.jp/tk/kanko/kad.html?code=21010113&type=ski&ba=tk" frameborder="0" scrolling="no"></iframe>
-      </div>
-    </div>
-    <div class="frame">
-      <p>高鷲スノーパーク</p>
-      <div class="iframe_block">
-        <iframe src="https://tenkura.n-kishou.co.jp/tk/kanko/kad.html?code=21010104&type=ski&ba=tk" frameborder="0" scrolling="no"></iframe>
-      </div>
-    </div>
+    <div id="panelList"></div>
   </div>
   <footer id="footer">
     <br>
     <p>© 2022 KanzakiRei</p>
     <br>
   </footer>
-  </body>
+</body>
+
 </html>
