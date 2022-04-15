@@ -1,6 +1,6 @@
-﻿function createList(_jsonText) {
+﻿function createList(_json) {
 	let target = document.getElementById("panelList");
-	_jsonText.forEach(data => {
+	_json.forEach(data => {
 		var date = new Date();
 		if (new Date(data.open).getTime() < date.getTime() && date.getTime() < new Date(data.close).getTime()) createFrame(target, data.name, data.url);
 	});
