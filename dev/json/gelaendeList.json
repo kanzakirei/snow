@@ -1,0 +1,32 @@
+[
+  {
+    "open": "2021-12-11T00:00:00",
+    "close": "2022-03-27T23:59:59",
+    "name": "ハチ高原",
+    "url": "https://tenkura.n-kishou.co.jp/tk/kanko/kad.html?code=28010001&type=ski&ba=kn"
+  },
+  {
+    "open": "2021-12-18T00:00:00",
+    "close": "2022-04-10T23:59:59",
+    "name": "ハチ北高原",
+    "url": "https://tenkura.n-kishou.co.jp/tk/kanko/kad.html?code=28010005&type=ski&ba=kn"
+  },
+  {
+    "open": "2021-12-18T00:00:00",
+    "close": "2022-04-17T23:59:59",
+    "name": "グランスノー奥伊吹",
+    "url": "https://tenkura.n-kishou.co.jp/tk/kanko/kad.html?code=25010007&type=ski&ba=kn"
+  },
+  {
+    "open": "2021-12-19T00:00:00",
+    "close": "2022-04-10T23:59:59",
+    "name": "めいほうスキー場",
+    "url": "https://tenkura.n-kishou.co.jp/tk/kanko/kad.html?code=21010113&type=ski&ba=tk"
+  },
+  {
+    "open": "2021-12-29T00:00:00",
+    "close": "2022-05-08T23:59:59",
+    "name": "高鷲スノーパーク",
+    "url": "https://tenkura.n-kishou.co.jp/tk/kanko/kad.html?code=21010104&type=ski&ba=tk"
+  }
+]
