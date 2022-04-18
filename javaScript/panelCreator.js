@@ -1,8 +1,11 @@
 ﻿function createList(_json) {
 	let target = document.getElementById("panelList");
 	_json.forEach(data => {
-		var date = new Date();
-		if (new Date(data.open).getTime() < date.getTime() && date.getTime() < new Date(data.close).getTime()) createFrame(target, data.name, data.url);
+		var currentDate = new Date();
+		var openDate = new Date(data.open);
+		var closeDate = new Date(data.close);
+		closeDate.setDate(closeDate.getDate() + 1);
+		if (openDate <= currentDate && currentDate <= closeDate) createFrame(target, `${data.name}\n(${data.open} ~ ${data.close})`, data.url);
 	});
 	if (target.children.length <= 0) createFrame(target, "滑走可能なゲレンデはありません。", null);
 }
@@ -20,7 +23,7 @@ function createFrame(_parent, _name, _url) {
 
 function createName(_parent, _name) {
 	let p = document.createElement("p");
-	p.textContent = _name;
+	p.innerText = _name;
 	_parent.appendChild(p);
 }
 
