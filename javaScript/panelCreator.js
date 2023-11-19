@@ -1,4 +1,4 @@
-﻿function createList(_json) {
+function createList(_json) {
 	let target = document.getElementById("panelList");
 	_json.forEach(data => {
 		var currentDate = new Date();
@@ -33,7 +33,7 @@ function createIframeBlock(_parent, _url) {
 	_parent.appendChild(div);
 
 	let iframe = document.createElement("iframe");
-	iframe.src = _url;
+	iframe.src = _url+"#tenki-tbl-margin";
 	iframe.frameBorder = "0";
 	iframe.scrolling = "no";
 	div.appendChild(iframe);
