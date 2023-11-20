@@ -5,8 +5,7 @@ function createList(_json) {
 		var openDate = new Date(data.open);
 		var closeDate = new Date(data.close);
 		closeDate.setDate(closeDate.getDate() + 1);
-		//if (openDate <= currentDate && currentDate <= closeDate) 
-		createFrame(target, `${data.name}\n(${data.open} ~ ${data.close})`, data.url);
+		reateFrame(target, `${data.name}\n(${data.open} ~ ${data.close})`, data.url);
 	});
 	if (target.children.length <= 0) createFrame(target, "滑走可能なゲレンデはありません。", null);
 }
@@ -25,6 +24,9 @@ function createFrame(_parent, _name, _url) {
 function createName(_parent, _name) {
 	let p = document.createElement("p");
 	p.innerText = _name;
+	if (openDate <= currentDate && currentDate <= closeDate) {
+		p.classList.add("color-red");
+	}
 	_parent.appendChild(p);
 }
 
