@@ -24,7 +24,7 @@ function createName(_openDate, _closeDate, _parent, _name) {
 	let p = document.createElement("p");
 	p.innerText = _name;
 	var currentDate = new Date();
-	if (_openDate > currentDate && currentDate > _closeDate) {
+	if (_openDate > currentDate || currentDate > _closeDate) {
 		p.classList.add("color_red");
 	}
 	_parent.appendChild(p);
