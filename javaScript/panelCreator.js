@@ -1,29 +1,29 @@
 function createList(_json) {
 	let target = document.getElementById("panelList");
 	_json.forEach(data => {
-		var currentDate = new Date();
 		var openDate = new Date(data.open);
 		var closeDate = new Date(data.close);
 		closeDate.setDate(closeDate.getDate() + 1);
-		reateFrame(target, `${data.name}\n(${data.open} ~ ${data.close})`, data.url);
+		createFrame(openDate, closeDate, target, `${data.name}\n(${data.open} ~ ${data.close})`, data.url);
 	});
 	if (target.children.length <= 0) createFrame(target, "滑走可能なゲレンデはありません。", null);
 }
 
-function createFrame(_parent, _name, _url) {
+function createFrame(_openDate, _closeDate, _parent, _name, _url) {
 	let div = document.createElement("div");
 	div.classList.add("frame");
 	_parent.appendChild(div);
 
-	createName(div, _name);
+	createName(_openDate, _closeDate, div, _name);
 	if (_url) {
 		createIframeBlock(div, _url);
 	}
 }
 
-function createName(_parent, _name) {
+function createName(_openDate, _closeDate, _parent, _name) {
 	let p = document.createElement("p");
 	p.innerText = _name;
+	var currentDate = new Date();
 	if (openDate <= currentDate && currentDate <= closeDate) {
 		p.classList.add("color-red");
 	}
