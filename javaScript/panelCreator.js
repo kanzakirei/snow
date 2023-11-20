@@ -5,7 +5,8 @@ function createList(_json) {
 		var openDate = new Date(data.open);
 		var closeDate = new Date(data.close);
 		closeDate.setDate(closeDate.getDate() + 1);
-		if (openDate <= currentDate && currentDate <= closeDate) createFrame(target, `${data.name}\n(${data.open} ~ ${data.close})`, data.url);
+		//if (openDate <= currentDate && currentDate <= closeDate) 
+		createFrame(target, `${data.name}\n(${data.open} ~ ${data.close})`, data.url);
 	});
 	if (target.children.length <= 0) createFrame(target, "滑走可能なゲレンデはありません。", null);
 }
