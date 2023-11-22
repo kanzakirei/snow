@@ -7,7 +7,7 @@ function createList(_json) {
 		closeDate.setDate(closeDate.getDate() + 1);
 	 if(!divs[data.url.slice(-2)]) {
 			divs[data.url.slice(-2)] = document.createElement("div");
-			target.appendChild(div);
+			target.appendChild(divs[data.url.slice(-2)]);
 		}
 		createFrame(openDate, closeDate, divs[data.url.slice(-2)], `${data.name}\n(${data.open} ~ ${data.close})`, data.url);
 	});
