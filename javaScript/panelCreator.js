@@ -1,15 +1,31 @@
 function createList(_json) {
 	let target = document.getElementById("panelList");
-	let divs = {};
+	let openDiv = document.createElement("div");
+	let closeDiv = document.createElement("div");
+	target.appendChild(openDiv);
+	target.appendChild(closeDiv);
+	let openDivs = {};
+	let closeDivs = {};
+	let currentDate = new Date();
 	_json.forEach(data => {
-		var openDate = new Date(data.open);
-		var closeDate = new Date(data.close);
+		let openDate = new Date(data.open);
+		let closeDate = new Date(data.close);
 		closeDate.setDate(closeDate.getDate() + 1);
-	 if(!divs[data.url.slice(-2)]) {
-			divs[data.url.slice(-2)] = document.createElement("div");
-			target.appendChild(divs[data.url.slice(-2)]);
+		let area = data.url.slice(-2)];
+		if (openDate > currentDate || currentDate > closeDate) {
+	  if(!closeDivs[area]) {
+			 closeDivs[area] = document.createElement("div");
+			 closeDiv.appendChild(closeDivs[area]);
+		 }
+			createFrame(openDate, closeDate, closeDivs[area], `${data.name}\n(${data.open} ~ ${data.close})`, data.url);
 		}
-		createFrame(openDate, closeDate, divs[data.url.slice(-2)], `${data.name}\n(${data.open} ~ ${data.close})`, data.url);
+		else {
+			if(!openDivs[area]) {
+			 openDivs[area] = document.createElement("div");
+			 openDiv.appendChild(openDivs[area]);
+		 }
+			createFrame(openDate, closeDate, openDivs[area], `${data.name}\n(${data.open} ~ ${data.close})`, data.url);
+		}
 	});
 	if (target.children.length <= 0) createFrame(target, "滑走可能なゲレンデはありません。", null);
 }
