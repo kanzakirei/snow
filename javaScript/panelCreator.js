@@ -11,7 +11,7 @@ function createList(_json) {
 		let openDate = new Date(data.open);
 		let closeDate = new Date(data.close);
 		closeDate.setDate(closeDate.getDate() + 1);
-		let area = data.url.slice(-2)];
+		let area = data.url.slice(-2);
 		if (openDate > currentDate || currentDate > closeDate) {
 	  if(!closeDivs[area]) {
 			 closeDivs[area] = document.createElement("div");
