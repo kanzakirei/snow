@@ -1,11 +1,15 @@
 function createList(_json) {
 	let target = document.getElementById("panelList");
+	let divs = {};
 	_json.forEach(data => {
 		var openDate = new Date(data.open);
 		var closeDate = new Date(data.close);
 		closeDate.setDate(closeDate.getDate() + 1);
-	
-		createFrame(openDate, closeDate, target, `${data.name}\n(${data.open} ~ ${data.close})`, data.url);
+	 if(!divs[data.url.slice(-2)]) {
+			divs[data.url.slice(-2)] = document.createElement("div");
+			target.appendChild(div);
+		}
+		createFrame(openDate, closeDate, divs[data.url.slice(-2)], `${data.name}\n(${data.open} ~ ${data.close})`, data.url);
 	});
 	if (target.children.length <= 0) createFrame(target, "滑走可能なゲレンデはありません。", null);
 }
